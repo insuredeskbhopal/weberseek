@@ -202,7 +202,7 @@ export default function ProjectEstimator() {
               </div>
 
               <a href="#contact" className="btn btn-primary-glow w-full btn-estimator-quote" id="estimatorCta">
-                <span>Get Instant WhatsApp Quote for This Scope</span>
+                <span>Get Instant Quote</span>
                 <ArrowRight size={16} />
               </a>
 

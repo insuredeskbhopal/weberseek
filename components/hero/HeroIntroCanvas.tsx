@@ -66,8 +66,11 @@ export default function HeroIntroCanvas() {
       const offCtx = offscreen.getContext('2d');
       if (!offCtx) return;
 
-      const fontSize = Math.min(Math.max(dWidth * 0.10, 44), 135);
-      const tracking = fontSize * 0.22;
+      const isMobile = dWidth < 768;
+      const fontSize = isMobile 
+        ? Math.min(Math.max(dWidth * 0.086, 28), 38)
+        : Math.min(Math.max(dWidth * 0.10, 44), 135);
+      const tracking = isMobile ? fontSize * 0.14 : fontSize * 0.22;
 
       offCtx.font = `${fontSize}px "Anurati", sans-serif`;
       offCtx.textAlign = 'center';
@@ -75,7 +78,7 @@ export default function HeroIntroCanvas() {
 
       const text = 'WEBERSEEK';
       const centerX = dWidth / 2;
-      const centerY = dHeight * 0.48;
+      const centerY = isMobile ? dHeight * 0.40 : dHeight * 0.48;
 
       const letters = text.split('');
       let totalWidth = 0;

@@ -5,9 +5,8 @@ import Lenis from '@studio-freight/lenis';
 
 export default function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // Only initialize Lenis on desktop screens
-    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouch || window.innerWidth <= 768) {
+    // Only disable Lenis on mobile phones (where native touch scroll is optimal)
+    if (window.innerWidth <= 768) {
       return;
     }
 

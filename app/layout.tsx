@@ -188,8 +188,8 @@ export default function RootLayout({
           as="image"
           href="/images/backgrounds/background 2.webp"
           type="image/webp"
-          // @ts-expect-error fetchpriority standard in HTML5
-          fetchpriority="high"
+          // @ts-expect-error fetchPriority in Next.js JSX
+          fetchPriority="high"
         />
         {/* Preload Primary Brand Geometric Font */}
         <link
