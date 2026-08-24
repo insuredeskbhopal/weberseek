@@ -204,6 +204,12 @@ export default function HeroIntroCanvas() {
     resizeCanvas();
     generateParticles();
 
+    if (typeof document !== 'undefined' && document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => {
+        generateParticles();
+      });
+    }
+
     function renderLoop() {
       if (!ctx) return;
       time += 0.02;

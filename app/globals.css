@@ -79,7 +79,7 @@ body {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('/images/backgrounds/background 2.png');
+  background-image: url('/images/backgrounds/background 2.webp');
   background-size: cover;
   background-position: center 25%;
   background-repeat: no-repeat;
@@ -719,7 +719,7 @@ body {
   position: relative;
   z-index: 20;
   background-color: #ffffff;
-  background-image: url('/images/backgrounds/WHITEBACKGROUND.png');
+  background-image: url('/images/backgrounds/WHITEBACKGROUND.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

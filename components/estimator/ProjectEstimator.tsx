@@ -33,15 +33,15 @@ export default function ProjectEstimator() {
           {/* Dynamic Project Type Background Artwork with Soft Cinematic Dark Vignette */}
           <div className="estimator-bg-layer" id="estimatorBgLayer">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/estimator/estimator_bg_website.jpg" alt="Single Page Website" className="estimator-bg-img active" data-type="website" loading="lazy" />
+            <img src="/images/estimator/estimator_bg_website.webp" alt="Single Page Website" className="estimator-bg-img active" data-type="website" loading="lazy" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/estimator/estimator_bg_website.jpg" alt="E-Commerce Storefront" className="estimator-bg-img" data-type="ecommerce" loading="lazy" />
+            <img src="/images/estimator/estimator_bg_website.webp" alt="E-Commerce Storefront" className="estimator-bg-img" data-type="ecommerce" loading="lazy" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/estimator/estimator_bg_mobile.jpg" alt="Business Mobile App" className="estimator-bg-img" data-type="mobile" loading="lazy" />
+            <img src="/images/estimator/estimator_bg_mobile.webp" alt="Business Mobile App" className="estimator-bg-img" data-type="mobile" loading="lazy" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/estimator/estimator_bg_software.jpg" alt="Custom Cloud Software" className="estimator-bg-img" data-type="software" loading="lazy" />
+            <img src="/images/estimator/estimator_bg_software.webp" alt="Custom Cloud Software" className="estimator-bg-img" data-type="software" loading="lazy" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/estimator/estimator_bg_ai.jpg" alt="AI Neural Orchestration" className="estimator-bg-img" data-type="ai" loading="lazy" />
+            <img src="/images/estimator/estimator_bg_ai.webp" alt="AI Neural Orchestration" className="estimator-bg-img" data-type="ai" loading="lazy" />
             <div className="estimator-vignette"></div>
           </div>
 

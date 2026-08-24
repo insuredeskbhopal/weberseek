@@ -6,6 +6,7 @@ import Script from 'next/script';
 // Ambient
 import BackgroundAtmosphere from '@/components/ambient/BackgroundAtmosphere';
 import GlassFilters from '@/components/ambient/GlassFilters';
+import Preloader from '@/components/ambient/Preloader';
 
 // Sections
 import HeroIntroCanvas from '@/components/hero/HeroIntroCanvas';
@@ -29,6 +30,7 @@ export default function WeberseekMain() {
 
   return (
     <>
+      <Preloader />
       <BackgroundAtmosphere />
       <HeroIntroCanvas />
       <SiteHeader />

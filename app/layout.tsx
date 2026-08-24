@@ -182,6 +182,23 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`}>
       <head>
+        {/* Preload Critical High-Priority Hero Background Image */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/backgrounds/background 2.webp"
+          type="image/webp"
+          // @ts-expect-error fetchpriority standard in HTML5
+          fetchpriority="high"
+        />
+        {/* Preload Primary Brand Geometric Font */}
+        <link
+          rel="preload"
+          href="/fonts/anurati-regular.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

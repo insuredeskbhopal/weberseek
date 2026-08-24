@@ -34,7 +34,7 @@ export default function ScaleSolutions() {
           <div className="scale-panel active has-bg-art" id="panel-local">
             <div className="panel-card-bg-wrap">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/backgrounds/local_business_bg.jpg" alt="Local Storefront Presence" className="panel-card-bg-img" loading="lazy" />
+              <img src="/images/backgrounds/local_business_bg.webp" alt="Local Storefront Presence" className="panel-card-bg-img" loading="lazy" />
               <div className="panel-card-vignette"></div>
             </div>
             <div className="scale-panel-grid">

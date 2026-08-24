@@ -17,20 +17,24 @@ const nextConfig = {
         destination: '/fonts/anurati-regular.otf',
       },
       {
-        source: '/WHITEBACKGROUND.png',
-        destination: '/images/backgrounds/WHITEBACKGROUND.png',
+        source: '/WHITEBACKGROUND.:ext',
+        destination: '/images/backgrounds/WHITEBACKGROUND.:ext',
       },
       {
-        source: '/background 2.png',
-        destination: '/images/backgrounds/background 2.png',
+        source: '/background%202.:ext',
+        destination: '/images/backgrounds/background 2.:ext',
       },
       {
-        source: '/background image.png',
-        destination: '/images/backgrounds/background image.png',
+        source: '/background 2.:ext',
+        destination: '/images/backgrounds/background 2.:ext',
       },
       {
-        source: '/local_business_bg.jpg',
-        destination: '/images/backgrounds/local_business_bg.jpg',
+        source: '/background%20image.:ext',
+        destination: '/images/backgrounds/background image.:ext',
+      },
+      {
+        source: '/local_business_bg.:ext',
+        destination: '/images/backgrounds/local_business_bg.:ext',
       },
       {
         source: '/estimator_bg_:path*',
