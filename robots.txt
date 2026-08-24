@@ -1,9 +1,0 @@
-# Robots.txt for WeberSeek
-User-agent: *
-Allow: /
-
-# Host
-Host: https://weberseek.info
-
-# Sitemap
-Sitemap: https://weberseek.info/sitemap.xml
