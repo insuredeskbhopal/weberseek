@@ -1,0 +1,469 @@
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .servicesGrid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .featureWide {
+    grid-column: span 7;
+  }
+  .featureTall {
+    grid-column: span 5;
+  }
+}
+
+/* Browser Frame HUD */
+.browserFrame, .mobileFrame, .saasFrame, .aiFrame {
+  background: rgba(3, 7, 18, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.25rem;
+}
+
+.hudTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.hudDots {
+  display: flex;
+  gap: 6px;
+}
+
+.dotRed { width: 10px; height: 10px; border-radius: 50%; background: #ef4444; }
+.dotYellow { width: 10px; height: 10px; border-radius: 50%; background: #eab308; }
+.dotGreen { width: 10px; height: 10px; border-radius: 50%; background: #22c55e; }
+
+.hudUrlPill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.725rem;
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.browserViewport {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.realUiSearchBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.realUiListingRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.realUiCardItem {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.6rem;
+}
+
+.realUiThumb {
+  height: 65px;
+  border-radius: 6px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-bottom: 0.4rem;
+}
+
+.villaThumb {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.4), rgba(15, 23, 42, 0.8));
+}
+
+.penthouseThumb {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.4), rgba(15, 23, 42, 0.8));
+}
+
+.thumbBadge {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: rgba(3, 7, 18, 0.85);
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--accent-cyan);
+}
+
+.realUiPrice {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.realUiSub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Mobile Frame */
+.mobileTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.mobileClock {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.islandPill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #000000;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.islandDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  animation: pulseGlow 2s infinite;
+}
+
+.mobileViewport {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobileLeadCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.mobileLeadIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(56, 189, 248, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mobileLeadInfo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.mobileLeadInfo strong {
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+
+.mobileLeadInfo span {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.instantBadge {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.mobileTabBar {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.tabItem {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.activeTab {
+  color: var(--accent-cyan);
+}
+
+/* SaaS Frame */
+.saasTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.saasMetricsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.metricBox {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 0.65rem;
+}
+
+.boxTitle {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.boxRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.boxRow strong {
+  font-size: 1.05rem;
+}
+
+.trendGreen { font-size: 0.7rem; color: #4ade80; font-weight: 600; }
+.trendCyan { font-size: 0.7rem; color: #38bdf8; font-weight: 600; }
+
+.chartBars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 65px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.chartBar {
+  flex: 1;
+  margin-inline: 3px;
+  background: rgba(56, 189, 248, 0.2);
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.chartBar span {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  position: absolute;
+  bottom: -16px;
+}
+
+.activeBar {
+  background: linear-gradient(180deg, #38bdf8 0%, #2563eb 100%);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+/* AI Frame */
+.aiStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.aiPulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c084fc;
+  box-shadow: 0 0 8px #c084fc;
+}
+
+.aiViewport {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chatBubble {
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.chatUser {
+  align-self: flex-end;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #ffffff;
+  max-width: 85%;
+}
+
+.chatBot {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 90%;
+}
+
+.botHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0.3rem;
+}
+
+.botBadge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #c084fc;
+}
+
+.botCitation {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.aiActionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.725rem;
+  color: #4ade80;
+  background: rgba(34, 197, 94, 0.1);
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+/* Card Content Area */
+.cardContent {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardMetaTag {
+  font-size: 0.725rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-cyan);
+  margin-bottom: 0.5rem;
+}
+
+.serviceName {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.serviceDescription {
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.chipsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.techChip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  color: var(--text-secondary);
+}
+
+.cardFooter {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.turnaroundTag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  transition: gap 0.2s ease;
+}
+
+.actionBtn:hover {
+  gap: 8px;
+  color: #ffffff;
+}

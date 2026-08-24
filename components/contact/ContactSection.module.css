@@ -1,0 +1,240 @@
+.contactBox {
+  padding: 2.5rem;
+  border-radius: var(--radius-xl);
+}
+
+@media (min-width: 1024px) {
+  .contactBox {
+    padding: 3.5rem;
+  }
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .contactGrid {
+    grid-template-columns: 1.15fr 1fr;
+  }
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactHeadline {
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.contactDesc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.contactPointsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.contactPoints {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.pointRow {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.pointIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cyan { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+.amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.blue { background: rgba(37, 99, 235, 0.15); color: #60a5fa; }
+
+.pointRow strong {
+  display: block;
+  font-size: 0.925rem;
+  color: #ffffff;
+  margin-bottom: 0.15rem;
+}
+
+.pointRow p {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.whatsappBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.65rem 1.15rem;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+  border-radius: 9999px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  width: fit-content;
+  transition: all 0.2s ease;
+}
+
+.whatsappBadge:hover {
+  background: rgba(34, 197, 94, 0.22);
+  transform: translateY(-1px);
+}
+
+.videoFrame {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 110px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.videoCrop {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.webmVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contact Form */
+.contactForm {
+  background: rgba(3, 7, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .formRow {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.formGroup label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.formGroup select {
+  cursor: pointer;
+}
+
+.formGroup select option {
+  background: #0b0f19;
+  color: #ffffff;
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 95px;
+}
+
+.formDisclaimer {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.formDisclaimer a {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.spinner {
+  animation: spinSlow 1.5s linear infinite;
+}
+
+.formStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.statusSuccess {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: #4ade80;
+}
+
+.statusError {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #f87171;
+}

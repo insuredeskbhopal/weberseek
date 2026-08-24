@@ -1038,6 +1038,43 @@ Sent via WeberSeek Official Website`;
     frame.addEventListener('pointerup', onPointerUp);
     frame.addEventListener('pointercancel', onPointerUp);
 
+    // Automatic auto-scroll loop (every 2.8 seconds, with smart pause on hover/drag)
+    let autoScrollTimer = null;
+    const AUTO_INTERVAL = 2800;
+
+    function startAutoScroll() {
+      stopAutoScroll();
+      autoScrollTimer = setInterval(() => {
+        if (!drag && document.visibilityState === 'visible') {
+          advance(1);
+        }
+      }, AUTO_INTERVAL);
+    }
+
+    function stopAutoScroll() {
+      if (autoScrollTimer) {
+        clearInterval(autoScrollTimer);
+        autoScrollTimer = null;
+      }
+    }
+
+    root.addEventListener('mouseenter', stopAutoScroll);
+    root.addEventListener('mouseleave', startAutoScroll);
+    root.addEventListener('touchstart', stopAutoScroll, { passive: true });
+    root.addEventListener('touchend', () => {
+      setTimeout(startAutoScroll, 1800);
+    }, { passive: true });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoScroll();
+      } else {
+        startAutoScroll();
+      }
+    });
+
+    startAutoScroll();
+
     function measure() {
       const firstCard = cardNodes[0];
       if (firstCard) {

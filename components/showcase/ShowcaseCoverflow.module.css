@@ -1,0 +1,234 @@
+.showcaseWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  margin-inline: auto;
+  perspective: 1200px;
+  user-select: none;
+}
+
+.showcaseViewport {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+@media (min-width: 768px) {
+  .showcaseViewport {
+    height: 540px;
+  }
+}
+
+.showcaseTrack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.showcaseCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 420px;
+  margin-top: -210px;
+  border-radius: 16px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+}
+
+@media (min-width: 768px) {
+  .showcaseCard {
+    width: 600px;
+    height: 460px;
+    margin-top: -230px;
+  }
+}
+
+.activeCard {
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 45px rgba(56, 189, 248, 0.4);
+}
+
+.browserWindow {
+  width: 100%;
+  height: 100%;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.activeCard .browserWindow {
+  border-color: rgba(56, 189, 248, 0.6);
+}
+
+.browserChrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1rem;
+  background: rgba(3, 7, 18, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.browserDots {
+  display: flex;
+  gap: 6px;
+}
+
+.dotRed { width: 9px; height: 9px; border-radius: 50%; background: #ef4444; }
+.dotYellow { width: 9px; height: 9px; border-radius: 50%; background: #eab308; }
+.dotGreen { width: 9px; height: 9px; border-radius: 50%; background: #22c55e; }
+
+.browserUrlBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.browserOpenBtn {
+  color: var(--text-muted);
+  padding: 0.2rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.browserOpenBtn:hover {
+  color: var(--accent-cyan);
+}
+
+.screenWrap {
+  flex-grow: 1;
+  position: relative;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.liveIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none;
+}
+
+.activeCard .liveIframe {
+  pointer-events: auto;
+}
+
+.navBtn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 70;
+  transition: all 0.2s ease;
+}
+
+.navBtn:hover {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.prevBtn { left: 0.5rem; }
+.nextBtn { right: 0.5rem; }
+
+@media (min-width: 1024px) {
+  .prevBtn { left: -1.5rem; }
+  .nextBtn { right: -1.5rem; }
+}
+
+.captionArea {
+  text-align: center;
+  margin-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.captionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.captionSub {
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.captionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  padding: 0.35rem 0.85rem;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.captionLink:hover {
+  background: rgba(56, 189, 248, 0.2);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.activeDot {
+  width: 28px;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan);
+}

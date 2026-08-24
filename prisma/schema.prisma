@@ -1,0 +1,92 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  schemas  = ["weberseek"]
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+}
+
+enum ServiceType {
+  SINGLE_PAGE
+  ECOMMERCE
+  MOBILE_APP
+  CUSTOM_SOFTWARE
+  AI_AUTOMATION
+  FULL_SOLUTION
+
+  @@schema("weberseek")
+}
+
+enum BusinessScale {
+  LOCAL_SMALL
+  STARTUP_SME
+  ENTERPRISE
+
+  @@schema("weberseek")
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  PROPOSAL_SENT
+  CONVERTED
+  CLOSED
+
+  @@schema("weberseek")
+}
+
+model Lead {
+  id             String         @id @default(cuid())
+  name           String
+  email          String
+  company        String?
+  serviceType    ServiceType    @default(SINGLE_PAGE)
+  businessScale  BusinessScale? @default(LOCAL_SMALL)
+  estimatedPrice String?
+  timeline       String?
+  details        String
+  status         LeadStatus     @default(NEW)
+  source         String         @default("website_contact_form")
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+  @@schema("weberseek")
+}
+
+model ProjectEstimate {
+  id              String        @id @default(cuid())
+  projectType     String
+  businessScale   String
+  features        String[]
+  calculatedPrice Int
+  lowRange        Int
+  highRange       Int
+  estimatedDays   Int
+  clientName      String?
+  clientEmail     String?
+  clientPhone     String?
+  createdAt       DateTime      @default(now())
+
+  @@index([createdAt])
+  @@schema("weberseek")
+}
+
+model PortfolioProject {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  subtitle    String
+  url         String
+  category    String
+  isFeatured  Boolean  @default(false)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  @@schema("weberseek")
+}

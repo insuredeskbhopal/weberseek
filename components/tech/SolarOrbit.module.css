@@ -1,0 +1,179 @@
+.solarWrapper {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  height: 520px;
+  margin-inline: auto;
+  perspective: 1000px;
+}
+
+@media (min-width: 768px) {
+  .solarWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.solarPlane {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(64deg) rotateZ(-14deg);
+}
+
+/* Sun Core */
+.sunCore {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110px;
+  height: 110px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #38bdf8 0%, #2563eb 60%, transparent 100%);
+  box-shadow: 0 0 60px rgba(56, 189, 248, 0.8), 0 0 100px rgba(37, 99, 235, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+}
+
+.sunFlare {
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  border: 1px dashed rgba(56, 189, 248, 0.4);
+  animation: spinSlow 20s linear infinite;
+}
+
+.flare2 {
+  inset: -30px;
+  border-color: rgba(168, 85, 247, 0.3);
+  animation-duration: 35s;
+  animation-direction: reverse;
+}
+
+.sunInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.sunTitle {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.sunSub {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+}
+
+/* Orbital Rings */
+.orbitRing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.ring1 { width: 280px; height: 280px; border-color: rgba(56, 189, 248, 0.15); }
+.ring2 { width: 500px; height: 500px; border-color: rgba(168, 85, 247, 0.15); }
+.ring3 { width: 720px; height: 720px; border-color: rgba(34, 197, 94, 0.15); }
+
+/* Planet Nodes */
+.planetNode {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.planetCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.6rem 0.9rem;
+  background: rgba(11, 15, 25, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.planetCard:hover {
+  border-color: var(--accent-cyan);
+  transform: scale(1.08);
+}
+
+.planetIconBox {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cyan { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+.blue { background: rgba(37, 99, 235, 0.15); color: #60a5fa; }
+.green { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
+.yellow { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+.pink { background: rgba(244, 63, 94, 0.15); color: #fb7185; }
+
+.planetInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.planetName {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.planetRole {
+  font-size: 0.675rem;
+  color: var(--text-muted);
+}
+
+/* Mobile Tech Grid */
+.mobileTechGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+@media (min-width: 480px) {
+  .mobileTechGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobileTechGrid {
+    display: none;
+  }
+}
+
+.mobileTechCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.85rem 1rem;
+}

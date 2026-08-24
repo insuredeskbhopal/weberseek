@@ -1,0 +1,118 @@
+.introScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: opacity 0.1s linear;
+}
+
+.introContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleStage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disintegrateCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: auto;
+}
+
+.glowAura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(80vw, 700px);
+  height: 180px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.25) 0%, rgba(168, 85, 247, 0.15) 45%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.2s ease-out;
+}
+
+.scrollCue {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  z-index: 20;
+  color: var(--text-secondary);
+  transition: color 0.2s ease, opacity 0.2s ease;
+  user-select: none;
+}
+
+.scrollCue:hover {
+  color: var(--accent-cyan);
+}
+
+.scrollCueText {
+  font-size: 0.725rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.scrollMouse {
+  width: 22px;
+  height: 34px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.scrollWheel {
+  width: 3px;
+  height: 6px;
+  background: var(--accent-cyan);
+  border-radius: 2px;
+  animation: scrollWheelAnim 1.8s infinite ease-in-out;
+}
+
+.scrollArrows {
+  animation: floatArrow 1.8s infinite ease-in-out;
+  color: var(--accent-cyan);
+}
+
+@keyframes scrollWheelAnim {
+  0% { transform: translateY(0); opacity: 1; }
+  60% { transform: translateY(8px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+@keyframes floatArrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}

@@ -1,0 +1,181 @@
+.coverflowWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  margin: 3.5rem auto 0;
+  perspective: 1000px;
+  user-select: none;
+}
+
+.coverflowFrame {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.coverflowTrack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.coverflowCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 290px;
+  height: 320px;
+  margin-top: -160px;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+}
+
+@media (min-width: 768px) {
+  .coverflowCard {
+    width: 320px;
+    height: 340px;
+    margin-top: -170px;
+  }
+}
+
+.activeCard {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(56, 189, 248, 0.35);
+}
+
+.cardBgWrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cardBg {
+  object-fit: cover;
+}
+
+.cardVignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3, 7, 18, 0.2) 0%, rgba(3, 7, 18, 0.95) 85%);
+}
+
+.glassBorder {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  pointer-events: none;
+  transition: border-color 0.3s ease;
+}
+
+.activeCard .glassBorder {
+  border-color: rgba(56, 189, 248, 0.6);
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.75rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.metricValue {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #ffffff 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.metricLabel {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.metricSub {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 60;
+  transition: all 0.2s ease;
+}
+
+.navBtn:hover {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.prevBtn {
+  left: 0.5rem;
+}
+
+.nextBtn {
+  right: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .prevBtn { left: -1.5rem; }
+  .nextBtn { right: -1.5rem; }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.activeDot {
+  width: 28px;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan);
+}

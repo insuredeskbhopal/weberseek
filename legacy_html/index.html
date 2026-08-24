@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   
   <!-- Primary Meta Tags -->
   <title>WEBERSEEK | Custom Website, Mobile App & Software Development Agency</title>
@@ -141,8 +141,8 @@
     (function() {
       var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS|FxiOS/i.test(navigator.userAgent) || (window.innerWidth && window.innerWidth <= 768);
       var urlParams = new URLSearchParams(window.location.search);
-      if (!isMobile && window.innerWidth > 768 && urlParams.get('view') !== 'mobile') {
-        window.location.replace('index.html' + window.location.search + window.location.hash);
+      if (isMobile && urlParams.get('view') !== 'desktop') {
+        window.location.replace('indexmobile.html' + window.location.search + window.location.hash);
       }
       var resizeTimer;
       window.addEventListener('resize', function() {
@@ -150,8 +150,8 @@
         resizeTimer = setTimeout(function() {
           var mobileNow = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS|FxiOS/i.test(navigator.userAgent) || (window.innerWidth && window.innerWidth <= 768);
           var params = new URLSearchParams(window.location.search);
-          if (!mobileNow && window.innerWidth > 768 && params.get('view') !== 'mobile') {
-            window.location.replace('index.html' + window.location.search + window.location.hash);
+          if (mobileNow && params.get('view') !== 'desktop') {
+            window.location.replace('indexmobile.html' + window.location.search + window.location.hash);
           }
         }, 300);
       });
@@ -203,7 +203,6 @@
     <div class="header-container">
       <a href="#hero-details" class="brand-logo">
         <span class="brand-title">WEBERSEEK</span>
-        <span class="brand-badge">STUDIO</span>
       </a>
 
       <nav class="nav-links" id="navLinks">
@@ -479,7 +478,7 @@
                     Chat
                   </span>
                   <span class="tab-item">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
                     Settings
                   </span>
                 </div>
@@ -620,6 +619,8 @@
                 </a>
               </div>
             </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -1202,123 +1203,136 @@
           <p class="section-desc">We use mature, widely-supported technologies that are fast for users and easy to maintain over the long haul.</p>
         </div>
 
-        <!-- Mobile Modern Tech Cards Grid -->
-        <div class="mobile-tech-card-grid">
-          
-          <!-- Card 1: Web & Frontend -->
-          <div class="mobile-tech-card">
-            <div class="mobile-tech-card-header">
-              <div class="mobile-tech-icon-box blue">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><ellipse cx="12" cy="12" rx="10" ry="4.2"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"></ellipse><circle cx="12" cy="12" r="1.8" fill="currentColor"></circle></svg>
-              </div>
-              <div class="mobile-tech-meta">
-                <span class="mobile-tech-category">FRONTEND & WEB</span>
-                <h4 class="mobile-tech-title">Next.js & React 19</h4>
+        <!-- 3D Tilted Solar System Arena -->
+        <div class="solar-system-wrapper" id="solarSystemWrapper">
+          <div class="solar-plane" id="solarPlane">
+            
+            <!-- Glowing Sun Central Core -->
+            <div class="solar-sun-core">
+              <div class="sun-flare flare-1"></div>
+              <div class="sun-flare flare-2"></div>
+              <div class="sun-inner">
+                <span class="sun-core-title">CORE</span>
+                <span class="sun-core-sub">ENGINE</span>
               </div>
             </div>
-            <p class="mobile-tech-desc">Sub-second page rendering, automated Google SEO readiness, and smooth interactive web experiences.</p>
-            <div class="mobile-tech-chips">
-              <span>TypeScript</span>
-              <span>Next.js 15</span>
-              <span>Tailwind CSS</span>
-            </div>
-          </div>
 
-          <!-- Card 2: Mobile App Development -->
-          <div class="mobile-tech-card">
-            <div class="mobile-tech-card-header">
-              <div class="mobile-tech-icon-box cyan">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-              </div>
-              <div class="mobile-tech-meta">
-                <span class="mobile-tech-category">MOBILE APPS</span>
-                <h4 class="mobile-tech-title">Flutter & React Native</h4>
-              </div>
-            </div>
-            <p class="mobile-tech-desc">Fluid 60fps animations across iOS & Android with offline-first sync and push notifications.</p>
-            <div class="mobile-tech-chips">
-              <span>iOS & Android</span>
-              <span>Flutter</span>
-              <span>React Native</span>
-            </div>
-          </div>
+            <!-- Orbit Ring 1 (Inner Orbit) -->
+            <div class="solar-orbit-ring ring-1"></div>
 
-          <!-- Card 3: Backend & API Microservices -->
-          <div class="mobile-tech-card">
-            <div class="mobile-tech-card-header">
-              <div class="mobile-tech-icon-box green">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l8.5 5v10L12 22 3.5 17V7L12 2z"></path><path d="M12 22V12"></path><path d="M20.5 7L12 12 3.5 7"></path></svg>
-              </div>
-              <div class="mobile-tech-meta">
-                <span class="mobile-tech-category">BACKEND & APIS</span>
-                <h4 class="mobile-tech-title">Node.js & Python</h4>
-              </div>
-            </div>
-            <p class="mobile-tech-desc">High-concurrency microservices, REST & GraphQL endpoints designed to handle thousands of requests.</p>
-            <div class="mobile-tech-chips">
-              <span>Node.js</span>
-              <span>FastAPI</span>
-              <span>Express</span>
-            </div>
-          </div>
+            <!-- Orbit Ring 2 (Middle Orbit) -->
+            <div class="solar-orbit-ring ring-2"></div>
 
-          <!-- Card 4: Cloud & Databases -->
-          <div class="mobile-tech-card">
-            <div class="mobile-tech-card-header">
-              <div class="mobile-tech-icon-box purple">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-              </div>
-              <div class="mobile-tech-meta">
-                <span class="mobile-tech-category">DATABASE & CLOUD</span>
-                <h4 class="mobile-tech-title">PostgreSQL & Supabase</h4>
-              </div>
-            </div>
-            <p class="mobile-tech-desc">Encrypted cloud databases, Redis caching, real-time subscriptions, and 99.99% infrastructure uptime.</p>
-            <div class="mobile-tech-chips">
-              <span>PostgreSQL</span>
-              <span>Supabase</span>
-              <span>Redis</span>
-            </div>
-          </div>
+            <!-- Orbit Ring 3 (Outer Orbit) -->
+            <div class="solar-orbit-ring ring-3"></div>
 
-          <!-- Card 5: AI & Automations -->
-          <div class="mobile-tech-card">
-            <div class="mobile-tech-card-header">
-              <div class="mobile-tech-icon-box amber">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"></path><path d="M18 10a6 6 0 0 1-12 0"></path><line x1="12" y1="16" x2="12" y2="22"></line></svg>
-              </div>
-              <div class="mobile-tech-meta">
-                <span class="mobile-tech-category">AI & AUTOMATIONS</span>
-                <h4 class="mobile-tech-title">OpenAI & Vector RAG</h4>
+            <!-- Planetary Tech Nodes (Revolving on Orbits) -->
+            
+            <!-- Planet 1: TypeScript (Ring 1) -->
+            <div class="planet-node ring-1-node" data-ring="1" data-angle="40" data-speed="1.2">
+              <div class="planet-card liquid-glass-card">
+                <div class="planet-icon-box cyan">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="M7 8h6M10 8v9M14 14.5c.8.8 2 .8 2.8 0 .8-.8.6-2-.5-2.5-.8-.4-1.8-.8-1.8-1.8 0-.8.7-1.5 1.7-1.5 1 0 1.8.5 2.3 1.3"></path></svg>
+                </div>
+                <div class="planet-info">
+                  <span class="planet-name">TypeScript</span>
+                  <span class="planet-role">Type Safety</span>
+                </div>
               </div>
             </div>
-            <p class="mobile-tech-desc">Intelligent document assistants, automated CRM pipeline workflows, and customer chat triage.</p>
-            <div class="mobile-tech-chips">
-              <span>OpenAI</span>
-              <span>Claude 3.5</span>
-              <span>LangChain</span>
-            </div>
-          </div>
 
-          <!-- Card 6: Payments & Security -->
-          <div class="mobile-tech-card">
-            <div class="mobile-tech-card-header">
-              <div class="mobile-tech-icon-box emerald">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
-              </div>
-              <div class="mobile-tech-meta">
-                <span class="mobile-tech-category">SECURITY & PAYMENTS</span>
-                <h4 class="mobile-tech-title">Stripe, Razorpay & Auth</h4>
+            <!-- Planet 2: React & Next.js (Ring 1) -->
+            <div class="planet-node ring-1-node" data-ring="1" data-angle="220" data-speed="1.2">
+              <div class="planet-card liquid-glass-card">
+                <div class="planet-icon-box cyan">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="12" rx="10" ry="4.2"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"></ellipse><circle cx="12" cy="12" r="1.8" fill="currentColor"></circle></svg>
+                </div>
+                <div class="planet-info">
+                  <span class="planet-name">React & Next.js</span>
+                  <span class="planet-role">Frontend & SSR</span>
+                </div>
               </div>
             </div>
-            <p class="mobile-tech-desc">One-click checkout gateways, OAuth2 / SSO authentication, and end-to-end PCI compliance.</p>
-            <div class="mobile-tech-chips">
-              <span>Stripe</span>
-              <span>Razorpay</span>
-              <span>OAuth 2.0</span>
-            </div>
-          </div>
 
+            <!-- Planet 3: Flutter & React Native (Ring 2) -->
+            <div class="planet-node ring-2-node" data-ring="2" data-angle="0" data-speed="0.8">
+              <div class="planet-card liquid-glass-card">
+                <div class="planet-icon-box blue">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3L4 13l4 4L18 7l-4-4z"></path><path d="M14 13l-4 4 4 4 6-6-4-2z"></path></svg>
+                </div>
+                <div class="planet-info">
+                  <span class="planet-name">Flutter & Native</span>
+                  <span class="planet-role">Mobile Apps</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Planet 4: Node.js & Express (Ring 2) -->
+            <div class="planet-node ring-2-node" data-ring="2" data-angle="120" data-speed="0.8">
+              <div class="planet-card liquid-glass-card">
+                <div class="planet-icon-box green">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8.5 5v10L12 22 3.5 17V7L12 2z"></path><path d="M12 22V12"></path><path d="M20.5 7L12 12 3.5 7"></path></svg>
+                </div>
+                <div class="planet-info">
+                  <span class="planet-name">Node.js & Express</span>
+                  <span class="planet-role">High-Concurrency API</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Planet 5: Python & FastAPI (Ring 2) -->
+            <div class="planet-node ring-2-node" data-ring="2" data-angle="240" data-speed="0.8">
+              <div class="planet-card liquid-glass-card">
+                <div class="planet-icon-box yellow">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c-3.5 0-3.5 1.5-3.5 1.5v2h3.5v1H5s-2.5 0-2.5 3 2 3 2 3h1.5v-1.5s0-1.5 1.5-1.5h3.5s1.5 0 1.5-1.5V4.5s0-1.5-3.5-1.5z"></path><path d="M12 21c3.5 0 3.5-1.5 3.5-1.5v-2h-3.5v-1H19s2.5 0 2.5-3-2-3-2-3h-1.5v1.5s0 1.5-1.5 1.5h-3.5s-1.5 0-1.5 1.5v3s0 1.5 3.5 1.5z"></path></svg>
+                </div>
+                <div class="planet-info">
+                  <span class="planet-name">Python & AI</span>
+                  <span class="planet-role">FastAPI & Automation</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Planet 6: PostgreSQL & Supabase (Ring 3) -->
+            <div class="planet-node ring-3-node" data-ring="3" data-angle="50" data-speed="0.5">
+              <div class="planet-card liquid-glass-card">
+                <div class="planet-icon-box purple">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                </div>
+                <div class="planet-info">
+                  <span class="planet-name">PostgreSQL & DB</span>
+                  <span class="planet-role">Supabase Cloud</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Planet 7: AWS & Google Cloud (Ring 3) -->
+            <div class="planet-node ring-3-node" data-ring="3" data-angle="170" data-speed="0.5">
+              <div class="planet-card liquid-glass-card">
+                <div class="planet-icon-box pink">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+                </div>
+                <div class="planet-info">
+                  <span class="planet-name">AWS & GCP Cloud</span>
+                  <span class="planet-role">Global Edge Infra</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Planet 8: Docker & CI/CD (Ring 3) -->
+            <div class="planet-node ring-3-node" data-ring="3" data-angle="290" data-speed="0.5">
+              <div class="planet-card liquid-glass-card">
+                <div class="planet-icon-box cyan">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 14c2-1 4-1 6 0 2 1 4 1 6 0 2-1 4-1 6 0 1-.5 2-.5 3 0"></path><path d="M4 14c0-4 3-8 8-8 5 0 8 4 8 8"></path><rect x="7" y="9" width="2" height="2"></rect><rect x="11" y="9" width="2" height="2"></rect><rect x="15" y="9" width="2" height="2"></rect><rect x="11" y="6" width="2" height="2"></rect></svg>
+                </div>
+                <div class="planet-info">
+                  <span class="planet-name">Docker & CI/CD</span>
+                  <span class="planet-role">Automated Pipelines</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>
@@ -1652,6 +1666,6 @@
     </defs>
   </svg>
 
-  <script src="mainmobile.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
