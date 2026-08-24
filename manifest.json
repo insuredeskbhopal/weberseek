@@ -1,0 +1,9 @@
+{
+  "name": "WeberSeek - Custom Websites & Mobile Apps",
+  "short_name": "WeberSeek",
+  "description": "Fast websites starting from ?2,999, mobile apps from ?11,999, and custom web software.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0284c7"
+}
