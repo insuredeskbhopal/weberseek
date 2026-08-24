@@ -20,6 +20,7 @@ import SolarOrbit from '@/components/tech/SolarOrbit';
 import ProcessWorkflow from '@/components/process/ProcessWorkflow';
 import ContactSection from '@/components/contact/ContactSection';
 import SiteFooter from '@/components/footer/SiteFooter';
+import MobileBottomDock from '@/components/navigation/MobileBottomDock';
 
 export default function WeberseekMain() {
   useEffect(() => {
@@ -46,6 +47,8 @@ export default function WeberseekMain() {
         <ContactSection />
         <SiteFooter />
       </main>
+
+      <MobileBottomDock />
 
       <GlassFilters />
 

@@ -29,16 +29,17 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 290px;
-  height: 320px;
-  margin-top: -160px;
-  border-radius: 20px;
+  width: clamp(230px, 72vw, 290px);
+  height: 290px;
+  margin-top: -145px;
+  border-radius: 18px;
   transform-style: preserve-3d;
   cursor: pointer;
+  touch-action: pan-y;
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
               opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
 }
 
 @media (min-width: 768px) {
@@ -46,6 +47,8 @@
     width: 320px;
     height: 340px;
     margin-top: -170px;
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
   }
 }
 

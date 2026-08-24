@@ -71,8 +71,39 @@ export default function MetricsCoverflow() {
     setCurrentIndex((prev) => (prev - 1 + count) % count);
   };
 
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null || touchStartY.current === null) return;
+    const diffX = e.changedTouches[0].clientX - touchStartX.current;
+    const diffY = e.changedTouches[0].clientY - touchStartY.current;
+
+    // Only swipe if horizontal motion exceeds vertical motion
+    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 35) {
+      if (diffX < 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+    touchStartX.current = null;
+    touchStartY.current = null;
+  };
+
   return (
-    <div className={styles.coverflowWrapper} role="region" aria-label="Startup Metrics Carousel">
+    <div 
+      className={styles.coverflowWrapper} 
+      role="region" 
+      aria-label="Startup Metrics Carousel"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       <div 
         ref={frameRef} 
         className={styles.coverflowFrame}
